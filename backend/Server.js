@@ -2,16 +2,29 @@ const express=require('express')
 const app=express()
 var API_KEY = 'YOUR_API_KEY';
 var DOMAIN = 'YOUR_DOMAIN_NAME';
-var mailgun = require('mailgun-js')({apiKey: '6ca90969337b8e041534f71e8bf5ee8f-e438c741-53e646a1', domain: 'sandboxdd23545946274bd8b96afdfaa7b8d767.mailgun.org'});
+var nodemailer = require('nodemailer');
 
-const data = {
-  from: 'avinash <avinash12797@gmail.com>',
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'avinash1279777@gmail.com',
+    pass: 'forTrial'
+  }
+});
+
+var mailOptions = {
+  from: 'avinash1279777@gmail.com',
   to: 'avinash127977@gmail.com',
-  subject: 'Hello',
-  text: 'Testing some Mailgun awesomeness!'
-}; 
-mailgun.messages().send(data, (error, body) => {
-  console.log(body);
+  subject: 'trial',
+  text: `otp:12345` 
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
 });
 app.listen(8080)
 app.get('/',async(req,res)=>{
