@@ -4,6 +4,8 @@ import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom'
 import EmployeeLogin from './EmployeeLogin';
 import Userlogin from './UseLogin';
 import Home from './Home'
+import OnEmployeeLogin from './OnEmployeeLogin';
+import OnUserLogin from './OnUserLogin';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           <Route path='/employeeLogin' exact component={EmployeeLogin} />
           <Route path='/userLogin' exact component={Userlogin} />
           <Route path='/' exact component={Home}/>
+          <Route path='/onEmployeeLogin' exact component={OnEmployeeLogin}/>
+          <Route path='/onUserLogin' exact component={OnUserLogin}/>
         </Switch>
   </Router>
     </div>
