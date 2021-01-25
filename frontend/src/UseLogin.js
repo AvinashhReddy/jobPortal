@@ -1,11 +1,12 @@
 import {Form,Button} from 'react-bootstrap'
 import axios from 'axios'
+import { useHistory } from "react-router-dom";
 import {useState,useEffect} from 'react'
 function Userlogin(){
 const [email,setEmail]=useState()
 const [actualotp,setactualOTP]=useState()
 const [enteredotp,setenteredOTP]=useState()
-
+const history=useHistory()
 const setEmailValue=(event)=>{
     setEmail(event.target.value)
 }
@@ -34,11 +35,12 @@ const setenteredOTPbyUser=(event)=>{
 const login=(event)=>{
     if(enteredotp){
 if(actualotp==enteredotp){
-alert("success")
+alert("Login success")
+history.push('/onUserLogin/'+email)
 event.preventDefault()
 }
 else{
-   alert("failed")
+   alert("Login failed")
    event.preventDefault()
 }}
 else{

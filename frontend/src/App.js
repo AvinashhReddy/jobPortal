@@ -7,6 +7,7 @@ import Home from './Home'
 import OnEmployeeLogin from './OnEmployeeLogin';
 import OnUserLogin from './OnUserLogin';
 
+
 function App() {
   return (
     <div >
@@ -33,7 +34,8 @@ function App() {
           <Route path='/userLogin' exact component={Userlogin} />
           <Route path='/' exact component={Home}/>
           <Route path='/onEmployeeLogin' exact component={OnEmployeeLogin}/>
-          <Route path='/onUserLogin' exact component={OnUserLogin}/>
+          <Route path='/onUserLogin/:user' exact component={OnUserLogin}/>
+          
         </Switch>
   </Router>
     </div>
