@@ -65,6 +65,10 @@ app.post('/addJob',(req,res)=>{
     
     
   })
+  if(process.env.NODE_ENV === 'production'){
+    
+
+  }
 
 
 
