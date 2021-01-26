@@ -19,7 +19,6 @@
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "cd client && npm start"
   },
   "author": "",
