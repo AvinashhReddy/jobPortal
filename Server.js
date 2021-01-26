@@ -16,8 +16,8 @@ var transporter = nodemailer.createTransport({
 });
 
 
-
-app.listen(process.env.PORT || 8080,()=>console.log("running!"))
+const port=process.env.PORT || 8080
+app.listen(port,()=>console.log(`running! at ${port}`))
 const url='mongodb+srv://cluster0:cluster0@cluster0.8xqli.mongodb.net/firstdb?retryWrites=true&w=majority'
 mongoose.connect(url,{useNewUrlParser:true, useUnifiedTopology: true})
 const con=mongoose.connection
